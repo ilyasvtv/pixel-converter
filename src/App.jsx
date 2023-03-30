@@ -69,27 +69,27 @@ function App() {
 	}
 
 	return (
-			<div className="App">
+		<div className="App">
 
-				<canvas className="hiddenCanvas" ref={canvasRefDownload} width={sizeOfCanvasForDownload.width} height={sizeOfCanvasForDownload.height}></canvas>
-				<canvas className="hiddenCanvas" ref={canvasRefDownloadModified} width={sizeOfCanvasForDownload.width} height={sizeOfCanvasForDownload.height}></canvas>
+			<canvas className="hiddenCanvas" ref={canvasRefDownload} width={sizeOfCanvasForDownload.width} height={sizeOfCanvasForDownload.height}></canvas>
+			<canvas className="hiddenCanvas" ref={canvasRefDownloadModified} width={sizeOfCanvasForDownload.width} height={sizeOfCanvasForDownload.height}></canvas>
 
-				<div className="canvasArea">
-					<canvas className="canvasImage" ref={canvasRef} width={300} height={300}></canvas>
-					<canvas className="canvasImage" ref={canvasRefOutput} width={300} height={300}></canvas>
-				</div>
-				<div className="menu">
-					<label className="btn" htmlFor="inputImage">Choose image</label>
-					<input id="inputImage" type="file" accept="image/*" onChange={(e) => {imageProcessing(e.target.files[0])}}/>
-					<div className="wrap">
-						<label className="info-label" htmlFor="inputShrinkValue">Handle shrink</label>
-						<input id="inputShrinkValue" type="range" min={3} max={10} value={shrinkValue} onChange={(e) => setShrinkValue(+e.target.value)}/>
-					</div>
-				</div>
-				<a href={pathToImage} download={transformedOnce}>
-					<button onClick={downloadImage} className="btn" disabled={!transformedOnce}>Download image</button>
-				</a>
+			<div className="canvasArea">
+				<canvas className="canvasImage" ref={canvasRef} width={300} height={300}></canvas>
+				<canvas className="canvasImage" ref={canvasRefOutput} width={300} height={300}></canvas>
 			</div>
+			<div className="menu">
+				<label className="btn" htmlFor="inputImage">Choose image</label>
+				<input id="inputImage" type="file" accept="image/*" onChange={(e) => {imageProcessing(e.target.files[0])}}/>
+				<div className="wrap">
+					<label className="info-label" htmlFor="inputShrinkValue">Handle shrink</label>
+					<input id="inputShrinkValue" type="range" min={3} max={10} value={shrinkValue} onChange={(e) => setShrinkValue(+e.target.value)}/>
+				</div>
+			</div>
+			<a href={pathToImage} download={transformedOnce}>
+				<button onClick={downloadImage} className="btn" disabled={!transformedOnce}>Download image</button>
+			</a>
+		</div>
 	)
 }
 
