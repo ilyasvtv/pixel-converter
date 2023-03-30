@@ -70,10 +70,8 @@ function App() {
 
 	return (
 		<div className="App">
-
 			<canvas className="hiddenCanvas" ref={canvasRefDownload} width={sizeOfCanvasForDownload.width} height={sizeOfCanvasForDownload.height}></canvas>
 			<canvas className="hiddenCanvas" ref={canvasRefDownloadModified} width={sizeOfCanvasForDownload.width} height={sizeOfCanvasForDownload.height}></canvas>
-
 			<div className="canvasArea">
 				<canvas className="canvasImage" ref={canvasRef} width={300} height={300}></canvas>
 				<canvas className="canvasImage" ref={canvasRefOutput} width={300} height={300}></canvas>
